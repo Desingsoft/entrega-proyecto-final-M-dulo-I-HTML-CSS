@@ -71,3 +71,59 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(`https://wa.me/573181898681?text=${text}`, '_blank', 'noopener,noreferrer');
   });
 });
+
+
+// Sistema solar interactivo del Hero: los servicios orbitan alrededor del logo CSI.
+(() => {
+  const system = document.getElementById('solarSystem');
+  const services = [...document.querySelectorAll('.solar-service')];
+  if (!system || !services.length) return;
+
+  let rotation = -90;
+  let lastTime = performance.now();
+  let paused = false;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const render = () => {
+    const width = system.clientWidth;
+    const height = system.clientHeight;
+    const cx = width / 2;
+    const cy = height / 2;
+    // Órbita elíptica: más ancha que alta, similar a un sistema solar.
+    const rx = width * 0.445;
+    const ry = height * 0.30;
+    const count = services.length;
+
+    services.forEach((item, index) => {
+      const baseAngle = (360 / count) * index;
+      const angle = (baseAngle + rotation) * Math.PI / 180;
+      const x = cx + rx * Math.cos(angle);
+      const y = cy + ry * Math.sin(angle);
+      item.style.left = `${x}px`;
+      item.style.top = `${y}px`;
+    });
+  };
+
+  const animate = now => {
+    const delta = Math.min(40, now - lastTime);
+    lastTime = now;
+    if (!paused && !reduceMotion) rotation = (rotation + delta * 0.0065) % 360;
+    render();
+    requestAnimationFrame(animate);
+  };
+
+  system.addEventListener('mouseenter', () => {
+    paused = true;
+    system.classList.add('is-hovering');
+  });
+  system.addEventListener('mouseleave', () => {
+    paused = false;
+    system.classList.remove('is-hovering');
+  });
+  system.addEventListener('focusin', () => { paused = true; });
+  system.addEventListener('focusout', () => { paused = false; });
+  window.addEventListener('resize', render, { passive: true });
+
+  render();
+  requestAnimationFrame(animate);
+})();
