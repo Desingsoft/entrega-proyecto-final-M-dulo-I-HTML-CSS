@@ -18,12 +18,12 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFo
 a { text-decoration: none; }
 
 /* NAVBAR */
-.navbar { background: rgba(7, 25, 54, .88); backdrop-filter: blur(14px); transition: var(--transition); padding: .8rem 0; }
-.navbar.scrolled { background: rgba(7, 25, 54, .98); padding: .35rem 0; box-shadow: 0 8px 28px rgba(0,0,0,.15); }
-.navbar.scrolled .navbar-logo { width: 205px; height: 56px; }
-.navbar-logo { width: 225px; height: 62px; object-fit: contain; object-position: left center; display: block; filter: drop-shadow(0 0 8px rgba(25,169,255,.18)); transition: var(--transition); }
-.nav-link { color: rgba(255,255,255,.78) !important; font-weight: 600; position: relative; }
-.nav-link:hover, .nav-link.active { color: #fff !important; }
+.navbar { background: rgba(255,255,255,.96); backdrop-filter: blur(14px); transition: var(--transition); padding: .65rem 0; border-bottom: 1px solid rgba(23,59,115,.10); box-shadow: 0 5px 22px rgba(10,35,70,.08); }
+.navbar.scrolled { background: rgba(255,255,255,.99); padding: .28rem 0; box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+.navbar.scrolled .navbar-logo { width: 210px; height: 56px; }
+.navbar-logo { width: 225px; height: 62px; object-fit: cover; object-position: center; display: block; border-radius: 12px; box-shadow: 0 5px 18px rgba(8,34,72,.20); transition: var(--transition); }
+.nav-link { color: var(--royal-dark) !important; font-weight: 700; position: relative; }
+.nav-link:hover, .nav-link.active { color: #1264ad !important; }
 .nav-link::after { content:""; position:absolute; left:.5rem; right:.5rem; bottom:.1rem; height:2px; background:var(--electric); transform:scaleX(0); transition:var(--transition); }
 .nav-link:hover::after, .nav-link.active::after { transform:scaleX(1); }
 .btn-primary-custom { background: linear-gradient(135deg, var(--electric), #1976d2); border: 0; color: #fff; font-weight: 700; box-shadow: 0 8px 20px rgba(25,169,255,.25); }
@@ -191,3 +191,8 @@ a { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
+
+/* Navbar contrast: the generated logo uses a dark/blue glow, so the navigation stays light for clear visibility. */
+.navbar .navbar-toggler { border-color: rgba(23,59,115,.25); }
+.navbar .navbar-toggler-icon { filter: none; }
+@media (max-width: 991.98px) { .navbar-collapse { background: rgba(255,255,255,.98); border-radius: 0 0 18px 18px; padding: .7rem; } }
