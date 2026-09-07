@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
     <div class="container">
       <a class="navbar-brand" href="#inicio" aria-label="Capital Solutions Informatics">
-        <img src="img/logo-csi-generated-navbar-v2.png" class="navbar-logo" alt="Capital Solutions Informatics">
+        <img src="img/logo-csi-navbar.png" class="navbar-logo" alt="Capital Solutions Informatics">
       </a>
 
       <button class="navbar-toggler border-0 shadow-none" type="button"
@@ -45,71 +45,92 @@
 
   <main>
     <!-- HERO -->
-    <section id="inicio" class="hero-section">
+    <section id="inicio" class="hero-section hero-modern">
       <div class="hero-grid"></div>
-      <div class="container position-relative">
-        <div class="row align-items-center min-vh-100 py-5">
-          <div class="col-lg-7 pt-5">
+      <div class="hero-particles" aria-hidden="true"></div>
+      <div class="container position-relative hero-container">
+        <div class="row align-items-center g-4 g-xl-5">
+          <div class="col-lg-5 hero-copy">
             <span class="eyebrow fade-up">
-              <i class="bi bi-stars"></i> Innovación · Tecnología · Soluciones
+              <i class="bi bi-stars"></i> SOLUCIONES TECNOLÓGICAS INTEGRALES
             </span>
             <h1 class="hero-title fade-up delay-1">
-              Tecnología que <span>impulsa tus ideas.</span>
+              Tecnología que<br><span>impulsa tus ideas.</span>
             </h1>
             <p class="hero-text fade-up delay-2">
-              Soluciones tecnológicas y digitales para personas, emprendimientos,
-              negocios y empresas. Soporte, desarrollo, redes, ciberseguridad y mucho más.
+              En <strong>Capital Solutions Informatics (CSI)</strong> te ofrecemos soluciones
+              tecnológicas y digitales para personas, emprendimientos, negocios y empresas.
             </p>
             <div class="d-flex flex-wrap gap-3 fade-up delay-3">
               <a href="#servicios" class="btn btn-primary-custom btn-lg">
                 Explorar servicios <i class="bi bi-arrow-right ms-2"></i>
               </a>
-              <a href="#contacto" class="btn btn-outline-light btn-lg">
-                Hablemos
+              <a href="#nosotros" class="btn btn-outline-light btn-lg">
+                Conócenos
               </a>
             </div>
 
-            <div class="hero-stats row g-3 mt-4 fade-up delay-3">
-              <div class="col-6 col-md-4">
-                <div class="stat-item">
-                  <strong>360°</strong>
-                  <span>Soluciones integrales</span>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="stat-item">
-                  <strong>24/7</strong>
-                  <span>Soporte y acompañamiento</span>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="stat-item">
-                  <strong>+10</strong>
-                  <span>Áreas de servicio</span>
-                </div>
-              </div>
+            <div class="hero-trust fade-up delay-3">
+              <span><i class="bi bi-lightbulb"></i> Innovación</span>
+              <span><i class="bi bi-shield-check"></i> Confianza</span>
+              <span><i class="bi bi-headset"></i> Soporte</span>
+              <span><i class="bi bi-graph-up-arrow"></i> Resultados</span>
             </div>
           </div>
 
-          <div class="col-lg-5 d-none d-lg-block">
-            <div class="hero-visual" aria-label="Servicios de Capital Solutions Informatics en movimiento">
-              <div class="orbit orbit-1"></div>
-              <div class="orbit orbit-2"></div>
-              <div class="orbit-system" id="orbitSystem">
-                <div class="orbit-label" style="--angle:0deg"><span class="orbit-pill"><i class="bi bi-shield-lock"></i> Ciberseguridad</span></div>
-                <div class="orbit-label" style="--angle:51.4deg"><span class="orbit-pill"><i class="bi bi-diagram-3"></i> Redes</span></div>
-                <div class="orbit-label" style="--angle:102.8deg"><span class="orbit-pill"><i class="bi bi-code-slash"></i> Desarrollo</span></div>
-                <div class="orbit-label" style="--angle:154.2deg"><span class="orbit-pill"><i class="bi bi-megaphone"></i> Marketing</span></div>
-                <div class="orbit-label" style="--angle:205.6deg"><span class="orbit-pill"><i class="bi bi-pc-display"></i> Soporte</span></div>
-                <div class="orbit-label" style="--angle:257deg"><span class="orbit-pill"><i class="bi bi-controller"></i> Videojuegos</span></div>
-                <div class="orbit-label" style="--angle:308.4deg"><span class="orbit-pill"><i class="bi bi-person-video3"></i> Mentorías</span></div>
+          <div class="col-lg-7">
+            <div class="solar-system" id="solarSystem" aria-label="Servicios tecnológicos de Capital Solutions Informatics">
+              <div class="solar-glow"></div>
+              <div class="solar-orbit solar-orbit-outer"></div>
+              <div class="solar-orbit solar-orbit-middle"></div>
+              <div class="solar-orbit solar-orbit-inner"></div>
+              <div class="solar-stars" aria-hidden="true"></div>
+
+              <div class="solar-center">
+                <div class="solar-center-ring"></div>
+                <a href="#servicios" class="center-logo-link" aria-label="Ver todos los servicios">
+                  <img src="img/logo-csi-center.png" alt="Capital Solutions Informatics" class="solar-logo">
+                  <span class="smart-solutions">SMART SOLUTIONS</span>
+                </a>
               </div>
-              <div class="smart-core">
-                <i class="bi bi-cpu-fill"></i>
-                <small>CSI</small>
-                <strong>Smart Solutions</strong>
-                <span class="small text-white-50 mt-1">Tecnología que conecta ideas</span>
+
+              <div class="solar-services" id="solarServices">
+                <a class="solar-service" data-service="ciberseguridad" href="servicio.html?id=ciberseguridad" aria-label="Ciberseguridad">
+                  <span class="solar-icon"><i class="bi bi-shield-lock"></i></span><strong>Ciberseguridad</strong>
+                </a>
+                <a class="solar-service" data-service="redes" href="servicio.html?id=redes" aria-label="Redes e Infraestructura">
+                  <span class="solar-icon"><i class="bi bi-globe2"></i></span><strong>Redes</strong>
+                </a>
+                <a class="solar-service" data-service="soporte" href="servicio.html?id=soporte" aria-label="Soporte Tecnológico">
+                  <span class="solar-icon"><i class="bi bi-pc-display"></i></span><strong>Soporte Técnico</strong>
+                </a>
+                <a class="solar-service" data-service="software" href="servicio.html?id=software" aria-label="Software y Aplicaciones">
+                  <span class="solar-icon"><i class="bi bi-code-slash"></i></span><strong>Software y Apps</strong>
+                </a>
+                <a class="solar-service" data-service="web" href="servicio.html?id=web" aria-label="Desarrollo Web">
+                  <span class="solar-icon"><i class="bi bi-browser-chrome"></i></span><strong>Desarrollo Web</strong>
+                </a>
+                <a class="solar-service" data-service="tramites" href="servicio.html?id=tramites" aria-label="Trámites y Diligencias">
+                  <span class="solar-icon"><i class="bi bi-clipboard-check"></i></span><strong>Trámites</strong>
+                </a>
+                <a class="solar-service" data-service="ingles" href="servicio.html?id=ingles" aria-label="Cursos de Inglés">
+                  <span class="solar-icon"><i class="bi bi-mortarboard"></i></span><strong>Cursos de Inglés</strong>
+                </a>
+                <a class="solar-service" data-service="ventas" href="servicio.html?id=ventas" aria-label="Ventas">
+                  <span class="solar-icon"><i class="bi bi-bag"></i></span><strong>Ventas</strong>
+                </a>
+                <a class="solar-service" data-service="marketing" href="servicio.html?id=marketing" aria-label="Marketing Digital y Multimedia">
+                  <span class="solar-icon"><i class="bi bi-megaphone"></i></span><strong>Marketing Digital</strong>
+                </a>
+                <a class="solar-service" data-service="videojuegos" href="servicio.html?id=videojuegos" aria-label="Videojuegos">
+                  <span class="solar-icon"><i class="bi bi-controller"></i></span><strong>Videojuegos</strong>
+                </a>
+                <a class="solar-service" data-service="mentoria" href="servicio.html?id=mentoria" aria-label="Asistencia y Mentoría">
+                  <span class="solar-icon"><i class="bi bi-person-video3"></i></span><strong>Mentorías</strong>
+                </a>
               </div>
+
+              <div class="solar-hint"><i class="bi bi-mouse"></i> Haz clic en un servicio para conocerlo</div>
             </div>
           </div>
         </div>

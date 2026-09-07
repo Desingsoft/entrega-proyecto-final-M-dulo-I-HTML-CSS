@@ -18,12 +18,11 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFo
 a { text-decoration: none; }
 
 /* NAVBAR */
-.navbar { background: rgba(255,255,255,.96); backdrop-filter: blur(14px); transition: var(--transition); padding: .65rem 0; border-bottom: 1px solid rgba(23,59,115,.10); box-shadow: 0 5px 22px rgba(10,35,70,.08); }
-.navbar.scrolled { background: rgba(255,255,255,.99); padding: .28rem 0; box-shadow: 0 8px 28px rgba(0,0,0,.12); }
-.navbar.scrolled .navbar-logo { width: 210px; height: 56px; }
-.navbar-logo { width: 225px; height: 62px; object-fit: cover; object-position: center; display: block; border-radius: 12px; box-shadow: 0 5px 18px rgba(8,34,72,.20); transition: var(--transition); }
-.nav-link { color: var(--royal-dark) !important; font-weight: 700; position: relative; }
-.nav-link:hover, .nav-link.active { color: #1264ad !important; }
+.navbar { background: rgba(7, 25, 54, .88); backdrop-filter: blur(14px); transition: var(--transition); padding: .8rem 0; }
+.navbar.scrolled { background: rgba(7, 25, 54, .98); padding: .35rem 0; box-shadow: 0 8px 28px rgba(0,0,0,.15); }
+.navbar-logo { width: 195px; height: 56px; object-fit: contain; object-position: left center; display: block; }
+.nav-link { color: rgba(255,255,255,.78) !important; font-weight: 600; position: relative; }
+.nav-link:hover, .nav-link.active { color: #fff !important; }
 .nav-link::after { content:""; position:absolute; left:.5rem; right:.5rem; bottom:.1rem; height:2px; background:var(--electric); transform:scaleX(0); transition:var(--transition); }
 .nav-link:hover::after, .nav-link.active::after { transform:scaleX(1); }
 .btn-primary-custom { background: linear-gradient(135deg, var(--electric), #1976d2); border: 0; color: #fff; font-weight: 700; box-shadow: 0 8px 20px rgba(25,169,255,.25); }
@@ -192,7 +191,107 @@ a { text-decoration: none; }
   *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
 
-/* Navbar contrast: the generated logo uses a dark/blue glow, so the navigation stays light for clear visibility. */
-.navbar .navbar-toggler { border-color: rgba(23,59,115,.25); }
-.navbar .navbar-toggler-icon { filter: none; }
-@media (max-width: 991.98px) { .navbar-collapse { background: rgba(255,255,255,.98); border-radius: 0 0 18px 18px; padding: .7rem; } }
+
+/* =========================================================
+   HERO CSI · SISTEMA SOLAR DE SERVICIOS
+   ========================================================= */
+.hero-modern {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 75% 48%, rgba(0, 149, 255, .20), transparent 28%),
+    radial-gradient(circle at 88% 80%, rgba(0, 83, 190, .20), transparent 24%),
+    linear-gradient(135deg, #020b1d 0%, #061936 48%, #041126 100%);
+}
+.hero-modern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 0 72%, rgba(20, 143, 255, .05) 73%, transparent 74%),
+    linear-gradient(300deg, transparent 0 78%, rgba(20, 143, 255, .04) 79%, transparent 80%);
+}
+.hero-container { min-height: 100vh; display:flex; align-items:center; padding-top:7rem; padding-bottom:3rem; }
+.hero-copy { z-index: 5; }
+.hero-copy .hero-title { font-size: clamp(3rem, 5.4vw, 5.25rem); }
+.hero-copy .hero-text { font-size:1.08rem; color:rgba(228,241,255,.78); max-width:620px; }
+.hero-copy .hero-text strong { color:#fff; }
+.hero-trust { display:flex; flex-wrap:wrap; gap:0; margin-top:2.1rem; max-width:640px; border-top:1px solid rgba(110,198,255,.18); border-bottom:1px solid rgba(110,198,255,.12); }
+.hero-trust span { display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.05rem .85rem 0; margin-right:1.05rem; color:rgba(232,244,255,.8); font-size:.78rem; }
+.hero-trust i { color:#19b8ff; font-size:1.1rem; }
+
+.solar-system {
+  --solar-size: min(680px, 48vw);
+  width: var(--solar-size);
+  height: var(--solar-size);
+  max-width: 720px;
+  max-height: 720px;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+}
+.solar-glow { position:absolute; inset:13%; border-radius:50%; background:radial-gradient(circle, rgba(0,170,255,.19), rgba(0,100,255,.05) 45%, transparent 70%); filter:blur(12px); z-index:-2; }
+.solar-orbit { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-18deg); border:1px solid rgba(45,174,255,.48); border-radius:50%; box-shadow:0 0 18px rgba(0,157,255,.10), inset 0 0 18px rgba(0,157,255,.06); pointer-events:none; }
+.solar-orbit::before, .solar-orbit::after { content:""; position:absolute; width:6px; height:6px; border-radius:50%; background:#65d8ff; box-shadow:0 0 14px #19b8ff; }
+.solar-orbit::before { left:15%; top:8%; }
+.solar-orbit::after { right:12%; bottom:16%; }
+.solar-orbit-outer { width:94%; height:64%; transform:translate(-50%,-50%) rotate(-14deg); border-color:rgba(22,146,255,.68); }
+.solar-orbit-middle { width:78%; height:53%; transform:translate(-50%,-50%) rotate(20deg); border-color:rgba(36,180,255,.52); }
+.solar-orbit-inner { width:59%; height:42%; transform:translate(-50%,-50%) rotate(-24deg); border-color:rgba(87,205,255,.42); }
+.solar-orbit-outer::before { left:29%; top:-3px; }
+.solar-orbit-middle::after { right:27%; bottom:-3px; }
+.solar-services { position:absolute; inset:0; z-index:6; }
+.solar-service { position:absolute; width:126px; min-height:88px; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; color:#fff; transition:filter .25s ease, opacity .25s ease; cursor:pointer; }
+.solar-service::after { content:""; position:absolute; width:34px; height:34px; border-radius:50%; background:rgba(26,169,255,.10); filter:blur(11px); top:5px; z-index:-1; }
+.solar-icon { width:58px; height:58px; display:grid; place-items:center; border-radius:50%; color:#e9fbff; font-size:1.45rem; background:radial-gradient(circle at 35% 30%, #176cc8, #061d46 68%); border:2px solid rgba(32,185,255,.85); box-shadow:0 0 0 4px rgba(0,133,255,.08), 0 0 25px rgba(0,157,255,.42), inset 0 0 18px rgba(0,202,255,.18); transition:transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.solar-service strong { display:block; margin-top:.55rem; font-size:.78rem; line-height:1.12; color:#f6fbff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+.solar-service:hover, .solar-service:focus-visible { filter:brightness(1.15); }
+.solar-service:hover .solar-icon, .solar-service:focus-visible .solar-icon { transform:scale(1.18); background:radial-gradient(circle at 35% 30%, #20baff, #08438b 70%); box-shadow:0 0 0 5px rgba(0,180,255,.11), 0 0 38px rgba(0,187,255,.78); }
+.solar-service:hover strong, .solar-service:focus-visible strong { color:#6fe2ff; }
+.solar-system.is-hovering .solar-service:not(:hover) { opacity:.58; }
+.solar-center { position:absolute; width:42%; height:42%; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%; display:grid; place-items:center; z-index:5; }
+.solar-center::before { content:""; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle, rgba(1,12,33,.96) 0 48%, rgba(1,25,58,.72) 64%, transparent 72%); box-shadow:0 0 50px rgba(0,143,255,.28), 0 0 100px rgba(0,143,255,.10); }
+.solar-center-ring { position:absolute; inset:7%; border-radius:50%; border:1px solid rgba(77,203,255,.68); box-shadow:0 0 24px rgba(0,163,255,.30), inset 0 0 20px rgba(0,163,255,.18); animation:pulseRing 3s ease-in-out infinite; }
+.solar-center-ring::after { content:""; position:absolute; inset:7%; border-radius:50%; border:1px dashed rgba(85,199,255,.32); animation:spinRing 16s linear infinite; }
+.center-logo-link { position:relative; z-index:3; width:94%; height:94%; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:50%; }
+.solar-logo { width:76%; max-width:310px; height:auto; object-fit:contain; filter:drop-shadow(0 0 12px rgba(0,180,255,.35)); }
+.smart-solutions { margin-top:-.2rem; color:#c5f1ff; font-size:.62rem; letter-spacing:.34em; font-weight:800; text-shadow:0 0 14px rgba(0,177,255,.65); }
+.solar-hint { position:absolute; left:50%; bottom:1.5%; transform:translateX(-50%); z-index:7; display:flex; align-items:center; gap:.4rem; white-space:nowrap; color:rgba(186,225,248,.68); font-size:.67rem; letter-spacing:.05em; }
+.solar-hint i { color:#19b8ff; }
+.solar-stars { position:absolute; inset:0; pointer-events:none; opacity:.7; background-image:radial-gradient(circle, rgba(98,215,255,.8) 0 1px, transparent 2px); background-size:86px 73px; mask-image:radial-gradient(circle, black 10%, transparent 70%); }
+@keyframes pulseRing { 0%,100% { transform:scale(.98); opacity:.75; } 50% { transform:scale(1.02); opacity:1; } }
+@keyframes spinRing { to { transform:rotate(360deg); } }
+
+@media (max-width: 1199.98px) {
+  .solar-system { --solar-size: 560px; min-width:560px; min-height:560px; }
+  .solar-service { width:112px; }
+  .solar-icon { width:52px; height:52px; font-size:1.25rem; }
+  .solar-service strong { font-size:.7rem; }
+}
+@media (max-width: 991.98px) {
+  .hero-container { padding-top:7.5rem; }
+  .hero-copy { text-align:center; }
+  .hero-copy .hero-title, .hero-copy .hero-text { margin-left:auto; margin-right:auto; }
+  .hero-copy .d-flex { justify-content:center; }
+  .hero-trust { justify-content:center; margin-left:auto; margin-right:auto; }
+  .solar-system { --solar-size: min(92vw, 620px); width:var(--solar-size); height:var(--solar-size); min-width:0; min-height:0; margin-top:1rem; }
+}
+@media (max-width: 575.98px) {
+  .hero-modern { min-height:auto; }
+  .hero-container { min-height:auto; padding-top:7.25rem; padding-bottom:2.5rem; }
+  .hero-copy .hero-title { font-size:clamp(2.55rem, 13vw, 3.45rem); }
+  .hero-copy .hero-text { font-size:.98rem; }
+  .hero-trust span { padding-right:.6rem; margin-right:.6rem; font-size:.68rem; }
+  .solar-system { --solar-size:94vw; margin-left:-2vw; margin-right:-2vw; }
+  .solar-service { width:80px; min-height:66px; }
+  .solar-icon { width:42px; height:42px; border-width:1px; font-size:1rem; }
+  .solar-service strong { font-size:.56rem; }
+  .solar-logo { width:72%; }
+  .smart-solutions { font-size:.46rem; letter-spacing:.24em; }
+  .solar-hint { bottom:0; font-size:.56rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .solar-center-ring, .solar-center-ring::after { animation:none !important; }
+}

@@ -10,8 +10,7 @@ Landing page académica para el emprendimiento **Capital Solutions Informatics**
 - `js/script.js`: navegación, scroll, menú móvil, reveal al hacer scroll, tarjetas de servicios y formulario hacia WhatsApp.
 - `js/services.js`: catálogo y contenido detallado de servicios.
 - `img/logo-csi.png`: logotipo de CSI con fondo transparente.
-- `img/logo-csi-generated-navbar-v2.png`: versión anterior optimizada para navegación.
-- `img/logo-csi-generated-navbar.png`: versión del logotipo tecnológico generado para la navegación.
+- `img/logo-csi-navbar.png`: versión optimizada para navegación.
 - `img/logo-csi-original.png`: archivo original suministrado para la identidad visual.
 
 ## Tecnologías
@@ -81,5 +80,6 @@ style: mejorar responsive y animaciones
 ```
 
 
-### Navbar
-La barra de navegación utiliza una versión recortada del logo tecnológico generado, sobre una navbar blanca para conservar el contraste de los tonos azul rey y azul eléctrico.
+### Hero interactivo
+
+El Hero incluye un sistema solar de servicios desarrollado con JavaScript (`requestAnimationFrame`) y CSS, con 11 servicios clicables que llevan a su página de detalle. El logo central conserva la identidad visual de Capital Solutions Informatics.
